@@ -185,9 +185,9 @@ abstract class Base
         passthru($this->disable_wsgi);
         if (substr($name, 0, 5) == 'rails') {
             passthru($this->enable_passenger);
-        } elseif (substr($name, 0, 6) = 'django') {
+        } elseif (substr($name, 0, 6) == 'django') {
             passthru($this->enable_wsgi);
-        } elseif (substr($name, 0, 8) = 'catalyst') {
+        } elseif (substr($name, 0, 8) == 'catalyst') {
             passthru($this->enable_perl);
         } else {
             passthru($this->enable_php);
