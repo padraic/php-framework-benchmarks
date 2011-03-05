@@ -50,6 +50,7 @@ http_load_file = /tmp/http_load_url
 siege = /usr/bin/siege
 
 ; path to home dir .siegerc file
+; run siege.config if does not exist
 siege_file = /home/ubuntu/.siegerc
 
 ; the number of failures to allow for
@@ -78,8 +79,8 @@ enable_wsgi = a2enmod wsgi
 disable_wsgi = a2dismod wsgi
 
 ; command to load php module
-enable_php = a2enmod php
+enable_php = a2enmod php5
 
 ; command to unload php module
-disable_php = a2dismod php
+disable_php = a2dismod php5
 

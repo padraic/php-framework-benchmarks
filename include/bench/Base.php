@@ -52,6 +52,8 @@ abstract class Base
             }
         }
 
+        $this->cleanupApacheModules();
+
         // print the report
         $this->report();
 
@@ -196,7 +198,7 @@ abstract class Base
     {
         $this->outln("Configuring Apache modules ...");
         passthru($this->disable_php);
-        $this->outln(" - disabled mod_php");
+        $this->outln(" - disabled mod_php5");
         passthru($this->disable_perl);
         $this->outln(" - disabled mod_perl");
         passthru($this->disable_passenger);
@@ -214,9 +216,25 @@ abstract class Base
             $this->outln(" --> enabled mod_perl");
         } else {
             passthru($this->enable_php);
-            $this->outln(" --> enabled mod_php");
+            $this->outln(" --> enabled mod_php5");
         }
         $this->outln("... completed.");
+    }
+
+    protected function cleanupApacheModules()
+    {
+        $this->outln("Cleaning up Apache modules and enabling mod_php5 ...");
+        passthru($this->disable_perl);
+        $this->outln(" - disabled mod_perl");
+        passthru($this->disable_passenger);
+        $this->outln(" - disabled mod_passenger");
+        passthru($this->disable_wsgi);
+        $this->outln(" - disabled mod_wsgi");
+        passthru($this->enable_php);
+        $this->outln(" --> enabled mod_php5");
+        $this->outln("... completed.");
+        $this->outln("Restarting web server ...");
+        passthru($this->restart);
     }
 
     protected function report()
