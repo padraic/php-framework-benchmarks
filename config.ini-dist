@@ -66,16 +66,16 @@ enable_passenger = a2enmod passenger
 disable_passenger = a2dismod passenger
 
 ; command to load perl module
-enable_passenger = a2enmod perl
+enable_perl = a2enmod perl
 
 ; command to unload perl module
-disable_passenger = a2dismod perl
+disable_perl = a2dismod perl
 
 ; command to load wsgi module
-enable_passenger = a2enmod wsgi
+enable_wsgi = a2enmod wsgi
 
 ; command to unload wsgi module
-disable_passenger = a2dismod wsgi
+disable_wsgi = a2dismod wsgi
 
 ; command to load php module
 enable_php = a2enmod php

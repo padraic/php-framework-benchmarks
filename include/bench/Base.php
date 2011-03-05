@@ -195,19 +195,26 @@ abstract class Base
     protected function prepApacheModules($name)
     {
         $this->outln("Configuring Apache modules ...");
-        var_dump($this->disable_php); exit;
         passthru($this->disable_php);
+        $this->outln(" - disabled mod_php");
         passthru($this->disable_perl);
+        $this->outln(" - disabled mod_perl");
         passthru($this->disable_passenger);
+        $this->outln(" - disabled mod_passenger");
         passthru($this->disable_wsgi);
+        $this->outln(" - disabled mod_wsgi");
         if (substr($name, 0, 5) == 'rails') {
             passthru($this->enable_passenger);
+            $this->outln(" --> enabled mod_passenger");
         } elseif (substr($name, 0, 6) == 'django') {
             passthru($this->enable_wsgi);
+            $this->outln(" --> enabled mod_wsgi");
         } elseif (substr($name, 0, 8) == 'catalyst') {
             passthru($this->enable_perl);
+            $this->outln(" --> enabled mod_perl");
         } else {
             passthru($this->enable_php);
+            $this->outln(" --> enabled mod_php");
         }
         $this->outln("... completed.");
     }
