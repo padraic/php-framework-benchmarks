@@ -54,3 +54,26 @@ siege_file = /home/ubuntu/.siegerc
 
 ; the number of failures to allow for
 siege_failures = 1048576
+
+;-----------------------
+; apache module commands
+;-----------------------
+
+; command to load passenger (rails) module
+enable_passenger = a2enmod passenger
+
+; command to unload passenger (rails) module
+disable_passenger = a2dismod passenger
+
+; command to load perl module
+enable_passenger = a2enmod perl
+
+; command to unload perl module
+disable_passenger = a2dismod perl
+
+; command to load wsgi module
+enable_passenger = a2enmod wsgi
+
+; command to unload wsgi module
+disable_passenger = a2dismod wsgi
+
