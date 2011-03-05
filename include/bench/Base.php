@@ -195,6 +195,7 @@ abstract class Base
     protected function prepApacheModules($name)
     {
         $this->outln("Configuring Apache modules ...");
+        var_dump($this->disable_php); exit;
         passthru($this->disable_php);
         passthru($this->disable_perl);
         passthru($this->disable_passenger);

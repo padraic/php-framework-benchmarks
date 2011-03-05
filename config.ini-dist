@@ -78,8 +78,8 @@ enable_passenger = a2enmod wsgi
 disable_passenger = a2dismod wsgi
 
 ; command to load php module
-enable_passenger = a2enmod php
+enable_php = a2enmod php
 
 ; command to unload php module
-disable_passenger = a2dismod php
+disable_php = a2dismod php
 
