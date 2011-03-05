@@ -1,5 +1,8 @@
 V304::Application.routes.draw do
+
+
   scope "/rails/v3.0.4/public" do
+    match ":controller/:action"
     root :to => "home#index"
   end
 
