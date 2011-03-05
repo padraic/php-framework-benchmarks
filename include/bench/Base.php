@@ -22,6 +22,22 @@ abstract class Base
 
     protected $targets;
 
+    protected $enable_php;
+
+    protected $disable_php;
+
+    protected $enable_passenger;
+
+    protected $disable_passenger;
+
+    protected $enable_perl;
+
+    protected $disable_perl;
+
+    protected $enable_wsgi;
+
+    protected $disable_wsgi;
+
     public function exec()
     {
         // initialize
