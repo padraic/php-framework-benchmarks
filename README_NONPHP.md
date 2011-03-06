@@ -77,7 +77,8 @@ After the instance comes online, issue the following shell commands to install a
     pip install django
 
     # perl catalyst
-    aptitude install libapache2-mod-perl2 libcatalyst-perl
+    aptitude install libapache2-mod-perl2 libcatalyst-perl libcatalyst-modules-perl \
+        libcatalyst-engine-apache-perl
 
     # replace /var/www with the project checkout
     rm -rf /var/www
