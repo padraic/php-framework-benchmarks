@@ -1,37 +1,37 @@
 <VirtualHost *:80>
-    ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/htdocs
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/htdocs
 
-    <IfModule mod_passenger.c>
-        PassengerAppRoot /var/www/htdocs/rails/v3.0.4
-        RailsEnv production
-    </IfModule>
+        <IfModule mod_passenger.c>
+            PassengerAppRoot /var/www/htdocs/rails/v3.0.4
+            RailsEnv production
+        </IfModule>
 
-    <IfModule mod_wsgi.c>
-        WSGIScriptAlias /django/1_2_5 /var/www/htdocs/django/1_2_5/apache/django.wsgi
-    </IfModule>
+        <IfModule mod_wsgi.c>
+            WSGIScriptAlias /django/v1_2_5 /var/www/htdocs/django/v1_2_5/apache/django.wsgi
+        </IfModule>
 
-    <IfModule mod_perl.c>
-        PerlSwitches -I/var/www/htdocs/catalyst/5_80024/lib
-        <Perl>
-            use lib qw( /var/www/htdocs/catalyst/5_80024/lib/ );
-        </Perl>
-        PerlModule 5_80024
-        <Location /catalyst/5_80024>
-            SetHandler          modperl
-            PerlResponseHandler 5_80024
-        </Location>
-    </IfModule>
+        <IfModule mod_perl.c>
+            PerlSwitches -I/var/www/htdocs/catalyst/c5_8/lib
+            <Perl>
+                use lib qw( /var/www/htdocs/catalyst/c5_8/lib/ );
+            </Perl>
+            PerlModule c5_8
+            <Location /catalyst/c5_8>
+                SetHandler          modperl
+                PerlResponseHandler c5_8
+            </Location>
+        </IfModule>
 
-    <Directory /var/www/htdocs/>
-        Options Indexes FollowSymLinks MultiViews
-        AllowOverride All
-        Order allow,deny
-        allow from all
-    </Directory>
+        <Directory /var/www/htdocs/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+        </Directory>
 
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    LogLevel warn
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        LogLevel warn
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 
