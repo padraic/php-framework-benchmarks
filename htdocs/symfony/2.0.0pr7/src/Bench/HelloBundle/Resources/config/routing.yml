@@ -1,0 +1,7 @@
+homepage:
+    pattern:  /
+    defaults: { _controller: HelloBundle:Hello:welcome }
+
+Hello:
+    pattern:  /Hello
+    defaults: { _controller: HelloBundle:Hello:index }
