@@ -1,0 +1,3 @@
+
+Hello:
+    resource: "@HelloBundle/Resources/config/routing.yml"
